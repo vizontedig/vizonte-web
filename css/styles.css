@@ -1,0 +1,309 @@
+:root {
+    --vizonte-red: #d93025;
+    --vizonte-red-dark: #b42318;
+
+    --black: #111111;
+    --dark: #191919;
+
+    --text: #242424;
+    --text-secondary: #666666;
+
+    --background: #ffffff;
+    --background-light: #f6f6f6;
+
+    --border: #e5e5e5;
+
+    --max-width: 1200px;
+}
+
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ========================================
+   GENERAL LAYOUT
+======================================== */
+
+.container {
+    width: min(90%, var(--max-width));
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.site-header {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* VIZONTE LOGO */
+
+.brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.brand img {
+    display: block;
+
+    width: 165px;
+    height: auto;
+}
+
+
+/* NAVIGATION */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 34px;
+}
+
+.main-nav a {
+    font-size: 0.92rem;
+    font-weight: 500;
+
+    color: #444444;
+
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--vizonte-red);
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    min-height: 680px;
+
+    display: flex;
+    align-items: center;
+
+    background: var(--background);
+}
+
+.hero-content {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.eyebrow,
+.section-label {
+    margin-bottom: 20px;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    color: var(--vizonte-red);
+}
+
+.hero h1 {
+    max-width: 850px;
+
+    font-size: clamp(3rem, 6vw, 5.7rem);
+    line-height: 1.02;
+
+    letter-spacing: -0.045em;
+
+    color: var(--black);
+}
+
+.hero-description {
+    max-width: 610px;
+
+    margin-top: 30px;
+
+    font-size: 1.2rem;
+
+    color: var(--text-secondary);
+}
+
+
+/* PRIMARY BUTTON */
+
+.primary-button {
+    display: inline-block;
+
+    margin-top: 38px;
+
+    padding: 14px 24px;
+
+    border-radius: 6px;
+
+    background: var(--vizonte-red);
+    color: white;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.primary-button:hover {
+    background: var(--vizonte-red-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   CONTENT SECTIONS
+======================================== */
+
+.section {
+    padding: 120px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.section-light {
+    background: var(--background-light);
+}
+
+.section h2 {
+    max-width: 760px;
+
+    margin-bottom: 24px;
+
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    line-height: 1.12;
+
+    letter-spacing: -0.035em;
+
+    color: var(--black);
+}
+
+.section > .container > p:not(.section-label) {
+    max-width: 650px;
+
+    font-size: 1.08rem;
+
+    color: var(--text-secondary);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.site-footer {
+    padding: 50px 0;
+
+    background: var(--dark);
+
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.footer-content strong {
+    letter-spacing: 0.08em;
+}
+
+.footer-content p {
+    font-size: 0.85rem;
+
+    color: #aaaaaa;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        height: auto;
+
+        padding: 18px 0;
+    }
+
+    .nav-container {
+        align-items: center;
+
+        gap: 25px;
+    }
+
+    .brand img {
+        width: 145px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-content {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
